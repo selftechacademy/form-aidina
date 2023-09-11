@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CustomDropDown = ({
+const CustomDropdownFlex = ({
   options,
   label,
   secondLabel = "",
@@ -17,12 +17,9 @@ const CustomDropDown = ({
   };
 
   return (
-    <div className="mb-3">
-      <div className="d-inline-block" style={{ width: `${width}` }}>
-        <label className="form-label text-nowrap mb-0">
-          {label}
-          {label && ":"}
-        </label>
+    <div className="d-flex mb-2">
+      <div className="d-flex" style={{ width: `${width}` }}>
+        <label className="form-label text-nowrap mb-0 mx-2">{label}:</label>
         <select
           className={`form-select form-select-${size}`}
           name={name}
@@ -38,9 +35,11 @@ const CustomDropDown = ({
           ))}
         </select>
       </div>
-      <span className="mx-3 fw-bold">{secondLabel?.toUpperCase()}</span>
+      <span className="mx-3 fw-bold" style={{ alignSelf: "end" }}>
+        {secondLabel?.toUpperCase()}
+      </span>
     </div>
   );
 };
 
-export default CustomDropDown;
+export default CustomDropdownFlex;

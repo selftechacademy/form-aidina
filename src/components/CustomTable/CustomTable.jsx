@@ -3,7 +3,7 @@ import React from "react";
 const CustomTable = ({ tableData }) => {
   return (
     <>
-      <table class="table table-bordered">
+      <table className="table table-bordered">
         <thead className="table-secondary">
           <tr>
             {Object.keys(tableData[0])?.map((el, index) => (
